@@ -21,7 +21,7 @@ RUN ./Miniconda2-latest-Linux-x86_64.sh -b -p ${SOFTDIR}/miniconda2
 
 COPY condarc /root/.condarc
 
-RUN ${SOFTDIR}/miniconda2/bin/conda install -y perl-excel-writer-xlsx perl-statistics-descriptive perl-statistics-r htslib=1.9 perl-bioperl perl-gd perl-db-file r-ggplot2 r-reshape2 r-base bedtools seqtk vcftools bwa samtools sambamba fastp pigz openjdk=8.0.192 gatk=3.6
+RUN ${SOFTDIR}/miniconda2/bin/conda install -y perl-excel-writer-xlsx perl-statistics-descriptive perl-statistics-r htslib=1.9 perl-bioperl perl-gd perl-db-file r-ggplot2 r-reshape2 r-base bedtools seqtk vcftools bwa samtools sambamba pigz openjdk=8.0.192 gatk=3.6
 RUN ${SOFTDIR}/miniconda2/bin/R -e "install.packages('argparser', repos='https://cran.rstudio.com/')"
 RUN rm -fr Miniconda2-latest-Linux-x86_64.sh remi-release-7.7-1.el7.remi.noarch.rpm ${SOFTDIR}/miniconda2/pkgs/*
 
